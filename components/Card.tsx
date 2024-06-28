@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import Colors from '../assets/Colors/Colors.js'
 import PostData from './PostData'
-import UserInfo from './UserInfo'
+import PostInfo from './PostInfo'
 
 // type Post = {
 // 	name: string
@@ -14,7 +14,10 @@ import UserInfo from './UserInfo'
 export default function Card(props) {
 	return (
 		<View style={styles.container}>
-			<UserInfo user={props.post.user}></UserInfo>
+			<PostInfo
+				user={props.post.user}
+				timestamp={props.post.data.timestamp}
+			></PostInfo>
 			<PostData
 				data={props.post.data}
 				id={props.post.id}
