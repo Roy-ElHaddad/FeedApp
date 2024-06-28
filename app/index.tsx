@@ -1,6 +1,6 @@
-import data from '@/Data/Posts.json'
 import Colors from '@/assets/Colors/Colors'
 import Card from '@/components/Card'
+import data from '@/data/Posts.json'
 import React, { useEffect, useState } from 'react'
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
