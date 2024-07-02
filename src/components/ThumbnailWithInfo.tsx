@@ -1,8 +1,13 @@
 import Colors from '@/assets/Colors/Colors'
+import { observer } from 'mobx-react'
 import moment from 'moment'
 import { Image, StyleSheet, Text, View } from 'react-native'
+import { User } from '../types'
 
-export default function ThumbnailWithInfo(props) {
+export default observer(function ThumbnailWithInfo(props: {
+	user: User
+	timestamp?: string
+}) {
 	return (
 		<View style={styles.container}>
 			<Image style={styles.userIcon} source={{ uri: props.user.avatar }} />
@@ -20,7 +25,7 @@ export default function ThumbnailWithInfo(props) {
 			</View>
 		</View>
 	)
-}
+})
 
 const styles = StyleSheet.create({
 	container: {

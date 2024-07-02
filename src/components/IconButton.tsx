@@ -1,7 +1,7 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import {
-    TouchableOpacity,
-    ViewStyle,
+	TouchableOpacity,
+	ViewStyle,
 } from 'react-native'
 
 export default function IconButton({

@@ -5,11 +5,11 @@ import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import PostStore from '../stores/PostStore'
+import type { Post } from '../types'
 
-//TODO implement types 
-export default function PostData({ post }) {
+export default function PostData({ post }: { post: Post}) {
 	const navigation = useNavigation()
-	const handleDelete = (id) => {
+	const handleDelete = (id: number) => {
 		PostStore.deletePost(id)
 	}
 	return (

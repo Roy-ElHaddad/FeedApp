@@ -1,18 +1,19 @@
+import type { User } from '@/src/types';
 import { makeAutoObservable } from "mobx";
 
 class UserStore {
-    user = {};
+    user: User | undefined = undefined;
     constructor(){
         makeAutoObservable(this)
     }
     getUser(){
-        this.user
+        this.user 
     }
-    editUser(newUser){
-        this.user = newUser
+    editUser(newUser: User){
+        this.user = {...newUser}
     }
     clearUser(){
-        this.user = {Name:'',LastName:'',avatar:''}
+        this.user = undefined
     }
 }
 

@@ -1,20 +1,25 @@
 import Colors from '@/assets/Colors/Colors'
+import { User } from '@/src/types'
 import { useNavigation } from '@react-navigation/native'
 import * as ImagePicker from 'expo-image-picker'
+import { observer } from 'mobx-react'
 import { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import {
-    Alert, Image,
+    Alert,
+    Image,
     ScrollView,
-    StyleSheet, Text, TextInput,
-    View
+    StyleSheet,
+    Text,
+    TextInput,
+    View,
 } from 'react-native'
 import UserStore from '../stores/UserStore'
 import Button from './Button'
 import IconButton from './IconButton'
 
-export default function UserForm() {
-	let { user } = UserStore.user
+export default observer(function UserForm() {
+	const user = UserStore.user
 	const navigation = useNavigation()
 	const [image, setImage] = useState(user?.avatar ? user.avatar : null)
 	const {
@@ -28,18 +33,15 @@ export default function UserForm() {
 		},
 	})
 
-	const onSubmit = (data) => {
-		user = UserStore.clearUser()
-        if (image === null){
-            Alert.alert('Error','Please select an image',[{text:'OK'}])
-            return
-        }
-		let payload = {
-			user: {
-				name: user?.name ? user.name : data.name,
-				lastName: user?.lastName ? user.lastName : data.lastName,
-				avatar: user?.avatar ? user.avatar : image,
-			},
+	const onSubmit = (data: { name: string; lastName: string }) => {
+		if (image === null) {
+			Alert.alert('Error', 'Please select an image', [{ text: 'OK' }])
+			return
+		}
+		let payload: User = {
+			name: data.name,
+			lastName: data.lastName,
+			avatar: image,
 		}
 		UserStore.editUser(payload)
 		navigation.goBack()
@@ -137,8 +139,7 @@ export default function UserForm() {
 			</View>
 		</>
 	)
-}
-
+})
 const styles = StyleSheet.create({
 	textInput: {
 		backgroundColor: Colors.white,

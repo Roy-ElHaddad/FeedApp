@@ -1,6 +1,7 @@
 import Colors from '@/assets/Colors/Colors'
 import { useNavigation } from '@react-navigation/native'
 import * as ImagePicker from 'expo-image-picker'
+import { observer } from 'mobx-react'
 import { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import {
@@ -12,33 +13,41 @@ import {
 	View,
 } from 'react-native'
 import PostStore from '../stores/PostStore'
+import UserStore from '../stores/UserStore'
+import { Post } from '../types'
 import Button from './Button'
 import IconButton from './IconButton'
 import ThumbnailWithInfo from './ThumbnailWithInfo'
 
-export default function PostForm(props) {
-	console.log('props', props)
+export default observer(function PostForm(props: { post?: Post }) {
+	let user
+	if (props?.post?.user) {
+		user = props.post.user
+	} else {
+		user = UserStore.user
+	}
 	const navigation = useNavigation()
 	const [image, setImage] = useState(
-		props.post.data?.image ? props.post.data.image : null
+		props?.post?.data?.image ? props.post.data.image : null
 	)
 	const { handleSubmit, control } = useForm({
 		defaultValues: {
-			Text: props.post.data?.text ? props.post.data.text : '',
+			Text: props?.post?.data?.text ? props.post.data.text : '',
 		},
 	})
 
-	const onSubmit = (data) => {
-		let payload = {
-			user: props.post.user,
+	const onSubmit = (data: { Text: string }) => {
+		if (!user) return
+		let payload: Post = {
+			user: user,
 			data: {
-				timestamp: new Date().getTime(),
+				timestamp: new Date().toISOString(),
 				text: data.Text,
 				image: image,
 			},
-			id: props.post.id ? props.post.id : Math.floor(Math.random() * 1000),
+			id: props?.post?.id ? props.post.id : Math.floor(Math.random() * 1000),
 		}
-		props.post.id ? PostStore.editPost(payload) : PostStore.addPost(payload)
+		props?.post?.id ? PostStore.editPost(payload) : PostStore.addPost(payload)
 		navigation.goBack()
 	}
 
@@ -66,9 +75,7 @@ export default function PostForm(props) {
 				contentContainerStyle={{ padding: 15, gap: 10 }}
 				keyboardShouldPersistTaps="handled"
 			>
-				<ThumbnailWithInfo
-					user={props.post.user}
-				/>
+				{user && <ThumbnailWithInfo user={user} />}
 				<Controller
 					control={control}
 					rules={{
@@ -113,7 +120,7 @@ export default function PostForm(props) {
 			</View>
 		</>
 	)
-}
+})
 
 const styles = StyleSheet.create({
 	textInput: {

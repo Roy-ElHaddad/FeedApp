@@ -1,7 +1,10 @@
 import { NativeStackScreenProps } from 'react-native-screens/lib/typescript/native-stack/types'
+import { Post } from './classes'
 export type MainParamsList = {
 	Feed?: {}
-	EditScreen?: {}
+	EditScreen?: {
+		post: Post
+	}
 	CreatePost?: {}
 	UserScreen?: {}
 }

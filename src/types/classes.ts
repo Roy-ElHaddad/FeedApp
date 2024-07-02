@@ -1,6 +1,6 @@
 export type User = {
-    Name: string;
-    LastName: string;
+    name: string;
+    lastName: string;
     avatar: string;
 }
 
@@ -9,6 +9,7 @@ export type Post = {
     data: {
         timestamp: string;
         text: string;
+        image: string | null;
     };
-    key: number;
+    id: number;
 }

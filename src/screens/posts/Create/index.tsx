@@ -7,7 +7,7 @@ export default observer(function NewPost() {
 	let user = UserStore.user
 	return (
 		<View style={{ flex: 1 }}>
-			<PostForm post={user} />
+			<PostForm />
 		</View>
 	)
 })
