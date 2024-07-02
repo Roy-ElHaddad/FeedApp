@@ -1,0 +1,132 @@
+[
+	{
+		"user": {
+			"name": "Olivia",
+			"lastName": "SMITH",
+			"avatar": "https://randomuser.me/api/portraits/women/23.jpg"
+		},
+		"data": {
+			"timestamp": "2024-06-29T03:14:00.000Z",
+			"text": "This is Olivia's text. nuhu nahi nuhu nahi nuhu nahi nuhu nahi nuhu nahi nahi nahi nahi nahi nahi nahi nahi nahi",
+			"image": null
+		},
+		"id": 1
+	},
+	{
+		"user": {
+			"name": "Henry",
+			"lastName": "LEE",
+			"avatar": "https://randomuser.me/api/portraits/men/89.jpg"
+		},
+		"data": {
+			"timestamp": "2024-06-28T20:33:00.000Z",
+			"text": "Here's some information about Henry.",
+			"image": "https://picsum.photos/200/300?random=2"
+		},
+		"id": 2
+	},
+	{
+		"user": {
+			"name": "Sophia",
+			"lastName": "BROWN",
+			"avatar": "https://randomuser.me/api/portraits/women/18.jpg"
+		},
+		"data": {
+			"timestamp": "2024-06-28T15:42:00.000Z",
+			"text": "Sophia has a message for you.",
+			"image": null
+		},
+		"id": 3
+	},
+	{
+		"user": {
+			"name": "Noah",
+			"lastName": "WILLIAMS",
+			"avatar": "https://randomuser.me/api/portraits/men/43.jpg"
+		},
+		"data": {
+			"timestamp": "2024-06-28T12:17:00.000Z",
+			"text": "Check out Noah's update.",
+			"image": "https://picsum.photos/200/300?random=4"
+		},
+		"id": 4
+	},
+	{
+		"user": {
+			"name": "Emily",
+			"lastName": "JONES",
+			"avatar": "https://randomuser.me/api/portraits/women/72.jpg"
+		},
+		"data": {
+			"timestamp": "2024-06-28T08:51:00.000Z",
+			"text": "A friendly greeting from Emily.",
+			"image": "https://picsum.photos/200/300?random=5"
+		},
+		"id": 5
+	},
+	{
+		"user": {
+			"name": "William",
+			"lastName": "DAVIS",
+			"avatar": "https://randomuser.me/api/portraits/men/31.jpg"
+		},
+		"data": {
+			"timestamp": "2024-06-28T05:24:00.000Z",
+			"text": "William shares some news.",
+			"image": "https://picsum.photos/200/300?random=6"
+		},
+		"id": 6
+	},
+	{
+		"user": {
+			"name": "Charlotte",
+			"lastName": "MILLER",
+			"avatar": "https://randomuser.me/api/portraits/women/61.jpg"
+		},
+		"data": {
+			"timestamp": "2024-06-27T22:07:00.000Z",
+			"text": "Hope you're all having a great day!",
+			"image": "https://picsum.photos/200/300?random=7"
+		},
+		"id": 7
+	},
+	{
+		"user": {
+			"name": "Liam",
+			"lastName": "MARTIN",
+			"avatar": "https://randomuser.me/api/portraits/men/10.jpg"
+		},
+		"data": {
+			"timestamp": "2024-06-27T18:32:00.000Z",
+			"text": "Just checking in!",
+			"image": "https://picsum.photos/200/300?random=8"
+		},
+		"id": 8
+	},
+	{
+		"user": {
+			"name": "Ava",
+			"lastName": "CLARK",
+			"avatar": "https://randomuser.me/api/portraits/women/34.jpg"
+		},
+		"data": {
+			"timestamp": "2024-06-27T15:11:00.000Z",
+			"text": "Sharing some exciting news soon!",
+			"image": "https://picsum.photos/200/300?random=9"
+		},
+		"id": 9
+	},
+	{
+		"user": {
+			"name": "James",
+			"lastName": "WALKER",
+			"avatar": "https://randomuser.me/api/portraits/men/54.jpg"
+		},
+		"data": {
+			"timestamp": "2024-06-27T11:45:00.000Z",
+			"text": "Say hi to James!",
+			"image": "https://picsum.photos/200/300?random=10"
+		},
+		"id": 10
+	}
+]
