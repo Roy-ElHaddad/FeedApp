@@ -1,13 +1,14 @@
 import Colors from '@/assets/Colors/Colors'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
+import { observer } from 'mobx-react'
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import PostStore from '../stores/PostStore'
 import type { Post } from '../types'
 
-export default function PostData({ post }: { post: Post}) {
+export default observer(function PostData({ post }: { post: Post}) {
 	const navigation = useNavigation()
 	const handleDelete = (id: number) => {
 		PostStore.deletePost(id)
@@ -33,7 +34,7 @@ export default function PostData({ post }: { post: Post}) {
 			</View>
 		</View>
 	)
-}
+})
 
 const styles = StyleSheet.create({
 	text: {

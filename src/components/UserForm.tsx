@@ -35,7 +35,7 @@ export default observer(function UserForm() {
 
 	const onSubmit = (data: { name: string; lastName: string }) => {
 		if (image === null) {
-			Alert.alert('Error', 'Please select an image', [{ text: 'OK' }])
+			Alert.alert('Error', 'Please select a profile picture', [{ text: 'OK' }])
 			return
 		}
 		let payload: User = {
@@ -113,7 +113,7 @@ export default observer(function UserForm() {
 					)}
 					name="name"
 				/>
-				{errors.name && <Text> Name is required.</Text>}
+				{errors.name && <Text style={{color:'red'}}> Name is required.</Text>}
 
 				<Controller
 					control={control}
@@ -132,7 +132,7 @@ export default observer(function UserForm() {
 					)}
 					name="lastName"
 				/>
-				{errors.lastName && <Text>Last Name required.</Text>}
+				{errors.lastName && <Text style={{color:'red'}}>Last Name required.</Text>}
 			</ScrollView>
 			<View style={{ paddingHorizontal: 15, paddingVertical: 3 }}>
 				<Button name="Submit" onPress={handleSubmit(onSubmit)} />
