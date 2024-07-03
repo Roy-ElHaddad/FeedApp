@@ -92,5 +92,5 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 	},
-	addButtonContainer: { position: 'absolute', bottom: 10, right: 10 },
+	addButtonContainer: { position: 'absolute', bottom: 35, right: 10 },
 })
