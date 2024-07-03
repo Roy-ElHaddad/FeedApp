@@ -1,6 +1,6 @@
 # Welcome to the FeedApp 👋
 
-This Project built with react-native (ts) is a news feed app that is built with moc data and mobx as a state manager using react navigation for navigation between the screens.
+This Project built with react-native (ts) it is a news feed app that is built with moc data and mobx as a state manager using react navigation for navigation between the screens.
 
 ## Get started
 
