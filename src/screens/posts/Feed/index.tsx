@@ -80,7 +80,8 @@ export default observer(
 
 const styles = StyleSheet.create({
 	feedlist: {
-		padding: 16,
+		padding: 6,
+		marginBottom: 6
 	},
 	addButton: {
 		backgroundColor: Colors.accent,
